@@ -11,3 +11,17 @@ def home(request):
     return render(request, 'students/home.html', {
         'students': students
     })
+def result(request, name):
+
+    students = {
+        'Rahul': 85,
+        'Anu': 92,
+        'Arun': 76,
+    }
+
+    marks = students.get(name)
+
+    return render(request, 'students/result.html', {
+        'name': name,
+        'marks': marks
+    })
